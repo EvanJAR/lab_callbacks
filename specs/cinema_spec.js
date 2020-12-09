@@ -20,7 +20,8 @@ describe('Cinema', function () {
     trainspotting = new Film('T2 Trainspotting', 'drama', 2017, 117);
 
     films = [moonlight, bladeRunner, dunkirk, blackPanther, trainspotting];
-    cinema = new Cinema(films);
+    genre = ['drama', 'sci-fi', 'history', 'action', 'drama']
+    cinema = new Cinema(films, genre);
   });
 
   it('should have a collection of films', function () {
@@ -28,14 +29,29 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, films);
   });
 
-  it('should be able to get a list of film titles');
-  xit('should be able to find a film by title');
-  xit('should be able to filter films by genre');
+  it('should be able to get a list of film titles', function() {
+    const actual = cinema.getTitles()
+    const expected = ["Moonlight", "Blade Runner 2049", "Dunkirk", "Black Panther", "T2 Trainspotting"];
+    assert.deepStrictEqual(actual, expected);
+  });
+    
+
+  it('should be able to find a film by title', function() {
+    const actual = cinema.getFilmByTitle(films, moonlight);
+    const expected = moonlight;
+    assert.deepStrictEqual(actual, expected);
+  });
+
+  it('should be able to filter films by genre', function() {
+    const actual = cinema.getFilmByGenre(films, 'history')
+    const expected = dunkirk;
+    assert.deepStrictEqual(actual, expected);
+  });
+
   xit('should be able to check whether there are some films from a particular year');
   xit('should be able to check whether there are no films from a particular year');
   xit('should be able to check whether all films are over a particular length');
   xit('should be able to calculate total running time of all films');
 
-  // TEST FINGERS CROSSED
 
 });
