@@ -36,4 +36,6 @@ describe('Cinema', function () {
   xit('should be able to check whether all films are over a particular length');
   xit('should be able to calculate total running time of all films');
 
+  // TEST FINGERS CROSSED
+
 });
