@@ -18,9 +18,7 @@ Cinema.prototype.getFilmByTitle = function (films, title) {
 };
 
 Cinema.prototype.getFilmByGenre = function (films, genre) {
-  const filmByGenre = this.films.filter((film) => {
-    return film.genre;
-  });
+  const filmByGenre = this.films.filter(film => film.genre === genre);
   return filmByGenre;
 }
 

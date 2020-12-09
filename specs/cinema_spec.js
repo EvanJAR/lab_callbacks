@@ -20,8 +20,7 @@ describe('Cinema', function () {
     trainspotting = new Film('T2 Trainspotting', 'drama', 2017, 117);
 
     films = [moonlight, bladeRunner, dunkirk, blackPanther, trainspotting];
-    genre = ['drama', 'sci-fi', 'history', 'action', 'drama']
-    cinema = new Cinema(films, genre);
+    cinema = new Cinema(films);
   });
 
   it('should have a collection of films', function () {
@@ -44,7 +43,7 @@ describe('Cinema', function () {
 
   it('should be able to filter films by genre', function() {
     const actual = cinema.getFilmByGenre(films, 'history')
-    const expected = dunkirk;
+    const expected = [dunkirk];
     assert.deepStrictEqual(actual, expected);
   });
 
